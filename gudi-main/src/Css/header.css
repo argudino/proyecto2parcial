@@ -1,0 +1,79 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #004d99; /* Color de fondo del header */
+  color: #ffffff; /* Color del texto del header */
+  padding: 0.5rem 1rem; /* Espaciado interno */
+  position: fixed; /* Cambiado de absolute a fixed para mantener el header en la parte superior */
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  z-index: 1000; /* Asegura que el header esté por encima de otros elementos */
+}
+
+.header .logo {
+  flex: 1; /* Permite que el logo tome el espacio necesario */
+  display: flex;
+  align-items: center;
+}
+
+.header .logo img {
+  height: 50px; /* Ajusta esto según el tamaño de tu logo */
+  margin-right: 0.5rem;
+}
+
+.header nav {
+  display: flex;
+  
+  flex: 2; /* Permite que la navegación ocupe el doble de espacio que el logo */
+  justify-content: center; /* Alinea los elementos de navegación al final */
+}
+
+.header nav ul {
+  display: flex;
+  gap: 1rem; /* Espacio entre los elementos de navegación */
+  padding: 0;
+  margin: 0;
+  list-style-type: none; /* Quita los estilos de lista */
+}
+
+.header nav ul li {
+  padding: 0.5rem 1rem; /* Espaciado */
+}
+
+.header nav a {
+  color: #ffffff; /* Color de los enlaces */
+  text-decoration: none; /* Sin subrayado */
+  padding: 0.5rem 1rem; /* Espaciado */
+  transition: background-color 0.3s; /* Transición suave para efecto hover */
+}
+
+.header nav a:hover {
+  background-color: #003366; /* Color al pasar el mouse por encima */
+}
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: center; /* Centra los elementos cuando están en columna */
+  }
+  
+  .header nav ul {
+    flex-direction: column;
+    width: 100%;
+    align-items: center; /* Centra los elementos de la lista */
+  }
+  
+  .header nav ul li {
+    width: 100%; /* Hace que cada li ocupe el 100% del ancho disponible */
+    text-align: center; /* Centra el texto de cada li */
+  }
+  
+  .header nav a {
+    display: block; /* Hace que los enlaces se comporten como bloques, ocupando todo el espacio horizontal */
+    width: 100%;
+  }
+}
